@@ -9,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class HeroesComponent implements OnInit {
 
   heroes;
-  selectedHero;
+  
   constructor(service: HeroesService) { 
     this.heroes = service.getHeroes();
    }
+  selectedHero;
   selectHero(hero) {
     this.selectedHero = hero;
   }
