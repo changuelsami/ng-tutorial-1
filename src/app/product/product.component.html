@@ -1,0 +1,17 @@
+<h1>Il y {{n}} produits </h1>
+<div *ngFor="let product of products">
+    <p [style.backgroundColor]="product.qty > 2 ? 'red' : 'none'">Produit : {{ product.name }}</p>
+    <p class="badge" [class.badge-warning]="product.qty > 2" [class.badge-danger]="product.qty > 4">Qte : {{ product.qty }}</p>
+    <button (click)="addItem(product)">Ajouter au panier</button>
+</div>
+
+Panier : <span class="badge badge-info">{{total_qty}}</span>
+
+
+<!--
+<div *ngFor="let product of products">
+    <p>Produit : {{ product }}</p>
+    <p>Qte : {{ itemCount }}</p>
+    <button (click)="addItem()">Ajouter au panier</button>
+</div>
+-->

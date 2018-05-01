@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* importer Bootstrap */
+/* 
+@import "~bootstrap/dist/css/bootstrap.css"
+je l'ai désactivé car ça casse le style de heroes.component
+je l'ai importé dans product.component.css ainsi ça ne sera appliqué que pour cette partie
+*/

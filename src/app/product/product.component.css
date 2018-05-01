@@ -1,0 +1,2 @@
+/* je l'ai importé ici car si appliqué dans src/style.css ça casse heroes.component  */
+@import "~bootstrap/dist/css/bootstrap.css"
