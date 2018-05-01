@@ -1,17 +1,13 @@
 <h1>Il y {{n}} produits </h1>
 <div *ngFor="let product of products">
-    <p [style.backgroundColor]="product.qty > 2 ? 'red' : 'none'">Produit : {{ product.name }}</p>
-    <p class="badge" [class.badge-warning]="product.qty > 2" [class.badge-danger]="product.qty > 4">Qte : {{ product.qty }}</p>
-    <button (click)="addItem(product)">Ajouter au panier</button>
+    <p>Produit : {{ product.name }}</p>
+    <div>
+        <button class="btn btn-warning" (click)="addItem(product, -1)" [disabled]="product.qty === 0">-</button>
+        <input type="text" value="0" size="2" [(ngModel)]="product.qty">
+        <button class="btn btn-info" (click)="addItem(product, 1)">+</button>
+    </div>
+    <p class="badge">Qte : {{ product.qty }}</p>
 </div>
 
 Panier : <span class="badge badge-info">{{total_qty}}</span>
 
-
-<!--
-<div *ngFor="let product of products">
-    <p>Produit : {{ product }}</p>
-    <p>Qte : {{ itemCount }}</p>
-    <button (click)="addItem()">Ajouter au panier</button>
-</div>
--->

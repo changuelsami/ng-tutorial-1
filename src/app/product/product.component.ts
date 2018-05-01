@@ -53,11 +53,12 @@ export class ProductComponent {
     this.itemCount++;
   }*/
   total_qty = 0;
-  addItem(product) {
-    product.qty++;
+  addItem(product, step = 1) {
+    product.qty += step;
     let total_qty = 0;
-    for (let i = 0; i < this.products.length; i++)
+    for (let i = 0; i < this.products.length; i++) {
       total_qty += this.products[i].qty;
+    }
     this.total_qty = total_qty;
   }
 }
